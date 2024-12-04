@@ -1,7 +1,7 @@
 
 import { SessionWrapper } from "@/app/components/SessionWrapper";
 import SignInPage  from "@/app/components/login/AuthComponent";
-import SignOutPage from "@/app/components/login/SignoutComponent";
+import SignOutPage from "@/app/components/login/SignOutComponent";
 import {auth} from "@/lib/auth";
 
 
@@ -11,13 +11,17 @@ export default async function Login() {
     const isAuthenticated = !!session?.user;
 
     return (
-      <div>
-        <SessionWrapper>
-          {
-          isAuthenticated? <SignOutPage/>:<SignInPage/>
-          }
-        </SessionWrapper>
-      </div>
+      
+      <SessionWrapper>
+  {isAuthenticated ? (
+    
+      <SignOutPage />
+      
+    
+  ) : (
+    <SignInPage />
+  )}
+</SessionWrapper>
     );
     
 

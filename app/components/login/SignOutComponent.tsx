@@ -2,6 +2,8 @@
 
 import { signOut } from "next-auth/react";
 import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+
 
 export default function SignOutPage() {
   const [message, setMessage] = useState("");
@@ -21,9 +23,9 @@ export default function SignOutPage() {
       <h1 className="text-2xl mb-4">Sign Out</h1>
       <button 
         onClick={handleSignOut}
-        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+        className="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded flex items-center "
       >
-        Sign Out
+        <FaGithub className="text-4xl mr-2"/>Sign Out
       </button>
       {message && (
         <div className="mt-4 text-green-600">{message}</div>

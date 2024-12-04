@@ -1,9 +1,7 @@
-"use client"
-import { SessionProvider } from "next-auth/react"
 
+"use client";
+import { SessionProvider } from "next-auth/react";
 
-export const SessionWrapper = ({childern}: {childern: React.ReactNode}) => {
-    return <SessionProvider>
-        {childern}
-    </SessionProvider>
-}
+export const SessionWrapper = ({ children }: { children: React.ReactNode }) => {
+  return <SessionProvider>{children}</SessionProvider>;
+};
